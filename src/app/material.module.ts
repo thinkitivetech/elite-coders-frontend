@@ -1,19 +1,6 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from './material.module';
-import { appReducer } from './Store/app.reducer';
-import { StoreModule } from '@ngrx/store';
-import { CommonImportsModule } from './common-imports.module';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';  
-import { HttpClientModule } from "@angular/common/http";
-
-
-// Angular Material
 import { ModuleWithProviders} from "@angular/core";
 import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MatIconRegistry } from '@angular/material/icon';
@@ -47,10 +34,10 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
+// import{MatAutocompleteModule} from "@angular/material"
 import{MatToolbarModule} from '@angular/material/toolbar'
 import {MatBottomSheetModule } from '@angular/material/bottom-sheet'
 import { MatDividerModule } from "@angular/material/divider";
-import { UserModule } from './modules/user/user.module';
 
 const MaterialComponents = [
   MatAutocompleteModule,MatToolbarModule,
@@ -81,30 +68,17 @@ const MaterialComponents = [
   MatStepperModule,
   MatTableModule,
   MatTabsModule,
+ // Toast,
   MatNativeDateModule,
   MatBottomSheetModule,
   MatDividerModule,
   MatBadgeModule,
 ]
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
+  declarations: [],
   imports: [
-    CommonModule,
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-
-    // Module Loading Starts here
-    MaterialComponents,
-    FormsModule,
-    HttpClientModule,
-    MaterialModule,
-    ReactiveFormsModule,
-    StoreModule.forRoot(appReducer),
+    CommonModule,MaterialComponents
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  exports:[MaterialComponents]
 })
-export class AppModule { }
+export class MaterialModule { }
