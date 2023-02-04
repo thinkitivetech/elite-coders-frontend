@@ -54,15 +54,13 @@ export class UserFormComponent {
 
   onSubmit() {
     console.log("Object: ",this.form.value);
-    
     if (this.form.valid) {
       if (!this.form.get('id')?.value)
         this.service.insertEmployee(this.form.value);
       else
-        this.service.updateUser(this.form.value);
-      this.form.reset();
+      this.service.updateUser(this.form.value);
+      this.onClose(this.form.value);
       this.initializeFormGroup();
-      this.onClose();
     }
   }
 
@@ -71,10 +69,10 @@ export class UserFormComponent {
     this.initializeFormGroup();
   }
 
-  onClose() {
+  onClose(values?:any) {
+    this.dialogRef.close(values);
     this.form.reset();
-    this.initializeFormGroup();
-    this.dialogRef.close();
+    // this.initializeFormGroup();
   }
 
 }

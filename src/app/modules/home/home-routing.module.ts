@@ -3,8 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { CreateTemplateComponent } from './pages/create-template/create-template.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ProfessionalSummaryFormComponent } from './pages/professional-summary-form/professional-summary-form.component';
+import { TechnicalSkillsFormComponent } from './pages/technical-skills-form/technical-skills-form.component';
 import { UserFormComponent } from './pages/user-form/user-form.component';
-
+import { ProjectSummaryFormComponent } from './pages/project-summary-form/project-summary-form.component';
 const routes: Routes = [
   {
     path:'',
@@ -32,6 +33,13 @@ const routes: Routes = [
             path:'professional-info',
             component:ProfessionalSummaryFormComponent
           },
+          {
+            path:'technical-skills',
+            component:TechnicalSkillsFormComponent
+          },{
+            path:'project-info',
+            component:ProjectSummaryFormComponent
+          }
         ]
       }
       

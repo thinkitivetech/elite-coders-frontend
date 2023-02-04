@@ -1,12 +1,14 @@
-<mat-toolbar>
-    <span>{{form.controls['yearsOfExperience'].value?"Modify User":"New User"}}</span>
+<mat-toolbar color="primary">
+    <!-- <span>{{form.controls['yearsOfExperience'].value?"Modify User":"New User"}}</span> -->
+    <span>Professional Summary</span>
     <span class="fill-remaining-space"></span>
-    <button class="btn-dialog-close"
+    <!-- <button class="btn-dialog-close"
       mat-stroked-button
       (click)="onClose()"
       tabIndex="-1">
       <mat-icon>clear</mat-icon>
-    </button>
+    </button> -->
+    <mat-icon (click)="onClose()">close</mat-icon>
   </mat-toolbar>
   <form [formGroup]="form"
     class="normal-form"
@@ -14,7 +16,7 @@
         <div class="controles-container">
           
           <div class="sub-container">
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="outline">
                 <mat-label>Profile type</mat-label>
                 <mat-select formControlName="profileType"  name="Profile type">
                   <mat-option *ngFor="let profileType of profileTypes" [value]="profileType">
@@ -22,13 +24,13 @@
                   </mat-option>
                 </mat-select>
               </mat-form-field>
-            <mat-form-field>
+            <mat-form-field appearance="outline">
                 <input matInput placeholder="Years of Experience" formControlName="yearsOfExperience" name="yearsOfExperience">
                 <mat-error>
                   Years of Experience is <strong>required</strong>
                 </mat-error>
             </mat-form-field>
-            <mat-form-field class="example-full-width" name="summary">
+            <mat-form-field class="example-full-width" name="summary" appearance="outline">
                 <mat-label>Summary</mat-label>
                 <textarea matInput placeholder="Please enter your professional summary here..." formControlName="summary"></textarea>
                 <mat-error>

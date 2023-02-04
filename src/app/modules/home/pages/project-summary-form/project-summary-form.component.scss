@@ -1,14 +1,11 @@
 @import '../../../../../variables.scss';
 
-.main{
-    width: 50vw;
-}
-
 div.container {
     margin: 0px 40px;
 }
 
 .fill-remaining-space {
+
     flex: 1 1 auto;
 }
 
@@ -33,3 +30,17 @@ form.normal-form {
     margin: 5px;
     background-color: $primary;
 }
+
+mat-radio-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  mat-radio-button {
+    margin-bottom: 10px;
+  }
+
+  .example-full-width {
+    width: 100%;
+  }

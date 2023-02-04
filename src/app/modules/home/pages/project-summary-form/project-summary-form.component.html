@@ -1,0 +1,75 @@
+<mat-toolbar color="primary">
+    <span>Project Summary: </span>
+    <span class="fill-remaining-space"></span>
+    <!-- <button class="btn-dialog-close"
+      mat-stroked-button
+      (click)="onClose()"
+      tabIndex="-1">
+      <mat-icon>clear</mat-icon>
+    </button> -->
+    <mat-icon (click)="onClose()">close</mat-icon>
+  </mat-toolbar>
+  
+  <form [formGroup]="form"
+    class="normal-form"
+    (submit)="onSubmit()">
+    
+        <div class="controles-container">
+          <div class="sub-container">
+            <mat-form-field appearance="outline">
+                <mat-label>Project Name:</mat-label>
+                <input matInput placeholder="Project Name" formControlName="projectName">
+                <mat-error >
+                  Project Name is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>           
+              <mat-form-field appearance="outline">
+                <mat-label>Client Name:</mat-label>
+                <input formControlName="clientName"
+                  matInput
+                  placeholder="Client Name">
+                  <mat-error>
+                      Client Name is <strong>required</strong>
+                    </mat-error>
+              </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Domain:</mat-label>
+        <input formControlName="domain"
+          matInput
+          placeholder="domain">
+        <mat-error> Domain field is required.</mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" name="summary" appearance="outline">
+        <mat-label>Description:</mat-label>
+        <textarea matInput placeholder="Please enter your Project Description here..." formControlName="description"></textarea>
+        <mat-error>
+          Description is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" name="summary" appearance="outline">
+        <mat-label>Responsibility:</mat-label>
+        <textarea matInput placeholder="Please your responsibilities in project here..." formControlName="responsibilities"></textarea>
+        <mat-error>
+          Responsibilities field is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width" name="environment" appearance="outline">
+        <mat-label>Environment:</mat-label>
+        <textarea matInput placeholder="Please enter environment summary here..." formControlName="environment"></textarea>
+        <mat-error>
+          Environment is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+         </div>
+        </div>
+      
+    <div class="button-row">
+      <button mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="form.invalid" (click)="onSubmit()">Create</button>
+      <button mat-raised-button
+        color="warn"
+        (click)="onClear()">Clear</button>
+    </div>
+  </form>

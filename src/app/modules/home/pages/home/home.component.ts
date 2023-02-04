@@ -15,12 +15,12 @@ export class HomeComponent {
   }
 
   createTemplate(){
-    // const dialogRef = this.dialog.open(GenerateTypesComponent)
-    // dialogRef.afterClosed().subscribe(res=>{
-    //     if(res && res.isConfirmed){
-    //       console.log("Project Type :")
-    //     }
-    // })
-    this.router.navigate(['home/create'])
+    const dialogRef = this.dialog.open(GenerateTypesComponent)
+    dialogRef.afterClosed().subscribe(res=>{
+        if(res && res.isConfirmed){
+          console.log("Project Type :")
+        }
+    })
+    // this.router.navigate(['home/create'])
   }
 }

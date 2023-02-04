@@ -9,19 +9,26 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateTemplateComponent } from './pages/create-template/create-template.component';
 import { MatDialogRef } from '@angular/material/dialog';
+import { TechnicalSkillsFormComponent } from './pages/technical-skills-form/technical-skills-form.component';
+import { ProjectSummaryFormComponent } from './pages/project-summary-form/project-summary-form.component';
+import { CommonImportsModule } from 'src/app/common-imports.module';
+
+
 
 @NgModule({
     declarations: [
         HomeComponent,
         GenerateTypesComponent,
-        CreateTemplateComponent
+        CreateTemplateComponent,
+        TechnicalSkillsFormComponent,
+        ProjectSummaryFormComponent,
     ],
     imports: [
-    
-    CommonModule,
+        CommonModule,   
         HomeRoutingModule,
         MaterialModule,
-        MatIconModule
+        MatIconModule,
+        CommonImportsModule
     ],
     entryComponents:[
         GenerateTypesComponent

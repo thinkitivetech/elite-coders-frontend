@@ -44,9 +44,7 @@ onSubmit() {
       this.professionalSummaryService.insertProfessionalSummary(this.form.value);
     else
       this.professionalSummaryService.updateProfessionalSummary(this.form.value);
-    this.form.reset();
-    this.initializeFormGroup();
-    this.onClose();
+      this.onClose(this.form.value);
   }
 }
 
@@ -55,11 +53,10 @@ onClear() {
   this.initializeFormGroup();
 }
 
-onClose() {
+onClose(value?:any) {
+  this.dialogRef.close(value);
   this.form.reset();
   this.initializeFormGroup();
-  this.dialogRef.close();
 }
-
 
 }

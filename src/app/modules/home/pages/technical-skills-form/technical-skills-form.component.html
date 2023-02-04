@@ -1,0 +1,103 @@
+<div class="main">
+<mat-toolbar color="primary">
+    <span>Technical-skills</span>
+    <span class="fill-remaining-space"></span>
+    <!-- <button class="btn-dialog-close"
+      mat-stroked-button
+      (click)="onClose()"
+      tabIndex="-1">
+      <mat-icon>clear</mat-icon>
+    </button> -->
+  <mat-icon (click)="onClose()">close</mat-icon>
+
+  </mat-toolbar>
+  
+  <form [formGroup]="form"
+    class="normal-form"
+    (submit)="onSubmit()">
+
+    <mat-grid-list cols="2"
+    rowHeight="375px">
+    <mat-grid-tile>
+        <div class="controles-container">
+          <div class="sub-container">
+            <mat-form-field appearance="outline">
+                <mat-label>Languages:</mat-label>
+                <input matInput placeholder="ex:java,angular,..." formControlName="language">
+                <mat-error >
+                  Languages known is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Frameworks:</mat-label>
+              <input formControlName="frameworks"
+                matInput
+                placeholder="ex: Java Spring boot,Spring cloud,AngularJS, ...">
+              <mat-error>FrameWorks known are required</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Technologies:</mat-label>
+                <input formControlName="technologies"
+                  matInput
+                  placeholder="Collection,JDBC, JSP,...">
+                <mat-error>Technologies are required</mat-error>
+              </mat-form-field>     
+              <mat-form-field appearance="outline">
+                <mat-label>Development Tools:</mat-label>
+                <input formControlName="developmentTools"
+                  matInput
+                  placeholder="ex: Eclipse IDE,VSCode,...">
+                <mat-error>Technologies are required</mat-error>
+              </mat-form-field>           
+          </div>
+        </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+        <div class="controles-container">
+            <div class="sub-container">
+              <mat-form-field appearance="outline">
+                <mat-label>ORM Tools:</mat-label>
+                <input formControlName="orm"
+                  matInput
+                  placeholder="JPA, Hibernate, etc">
+                  <mat-error >
+                      ORM tools are <strong>required</strong>
+                    </mat-error>
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Web Services:</mat-label>
+                <input formControlName="webService"
+                  matInput
+                  placeholder="ex: REST, SOAP,...">
+                <mat-error >This field is mandatory.</mat-error>
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Databases:</mat-label>
+                <input formControlName="database"
+                  matInput
+                  placeholder="PostgresQL, MongoDB,...">
+                <mat-error >This field is mandatory.</mat-error>
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Scripting Languages:</mat-label>
+                <input formControlName="scriptLanguages"
+                  matInput
+                  placeholder="ex: JavaScript, typeScript, jQuery,...">
+                <mat-error >This field is mandatory.</mat-error>
+              </mat-form-field>
+              
+          </div>   
+        </div>
+    </mat-grid-tile>
+    </mat-grid-list>
+    <div class="button-row">
+      <button mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="form.invalid" (click)="onSubmit()">Create</button>
+      <button mat-raised-button
+        color="warn"
+        (click)="onClear()">Clear</button>
+    </div>
+  </form>
+</div>
