@@ -1,0 +1,125 @@
+@import '../../../../../variables.scss';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Lato,Roboto, "Helvetica Neue", sans-serif !important;
+}
+.main{
+    width: 100%;
+    padding: 20px 20px;
+    overflow: hidden;
+    height: 100vh;
+}
+.header{
+    height: 45px;
+    display: flex;
+    justify-content: space-between;
+
+    .img img{
+        width: 166.73px;
+        height: 45px;
+    }
+
+    .actions{
+        width: 15%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .contact-us, .user{ 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .icon{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-right: 10px;
+                img{
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+            .title{
+                color: $text-dark;
+                font-size: 1.4rem;
+            }
+        }
+
+    }
+    
+}
+
+.hero{
+    height: 45vh;
+    padding: 0 7%;
+    margin:7vh 0 0 0;
+    .hero-grid{
+        
+
+        .left{
+            .title{
+                font-size: 3.8rem;
+                line-height: 56px;
+                color: $text-dark;
+                margin:40px 0 0 0;
+                font-weight: 500;
+            }
+            .subtitle{
+                font-size: 2.6rem;
+                line-height: 56px;
+                color: $text-dark;
+                margin:40px 0 0 0;
+            }
+            .cta{
+                text-align: left;
+                // border: 1px solid;
+                display: flex;
+                flex-direction: column;
+                align-items: baseline;
+                margin:40px 0 0 0;
+                button{
+                    width: 297px;
+                    height: 48px;
+                    border-radius: 28px;
+                    background-color: $primary;
+                    font-size: 2.4rem;
+                    line-height: 56px;
+                    color: $text-white;
+                    margin:0 0 40px 0;
+                }
+
+                .view-btn{
+                    font-size: 2.4rem;
+                    line-height: 56px;
+                    color: $text-primary;
+                    padding-left: 10px;
+                    margin: -25px 0 0 0;
+                    padding-left: 40px;
+                }
+            }
+        
+        }
+        .left, .right{
+            // border: 1px solid red;
+        }
+        
+
+
+    }
+
+}
+
+.footer {
+    position: relative;
+    img{
+        width: inherit;
+        position: absolute;
+        right: -20%;
+        top: 8vh;
+        z-index: -1;
+        // border: 1px solid red;
+    }
+}
