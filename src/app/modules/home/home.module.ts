@@ -6,6 +6,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { MaterialModule } from 'src/app/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TechnicalSkillsFormComponent } from './pages/technical-skills-form/technical-skills-form.component';
+import { ProjectSummaryFormComponent } from './pages/project-summary-form/project-summary-form.component';
 
 
 
@@ -13,6 +14,7 @@ import { TechnicalSkillsFormComponent } from './pages/technical-skills-form/tech
     declarations: [
         HomeComponent,
         TechnicalSkillsFormComponent,
+        ProjectSummaryFormComponent,
     ],
     imports: [
         CommonModule,
