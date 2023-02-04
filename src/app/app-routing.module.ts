@@ -1,11 +1,13 @@
 import { NgModule, NgModuleFactory } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './modules/home/pages/home/home.component';
+import { LoginComponent } from './modules/user/pages/login/login.component';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
 
 const routes: Routes = [
   {
     path:'',
-    redirectTo:'/home',
+    redirectTo:'/user',
     pathMatch:'full'
   },
   {
@@ -14,10 +16,6 @@ const routes: Routes = [
   },{
     path:'home',
     loadChildren:()=> import('./modules/home/home.module').then(mod=>mod.HomeModule)
-  },
-  {
-    path:'404',
-    component:NotFoundComponent
   },
   {
     path:'**',

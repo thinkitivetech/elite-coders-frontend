@@ -9,31 +9,36 @@ import { CreateTemplateTypes } from 'src/app/models/create-template-types.enum';
 })
 export class GenerateTypesComponent {
 
-   generateTypes:{title:string,img:string}[] = [
+   generateTypes:{title:string,img:string,url:string}[] = [
     {
       // title:'Personal Information',
       title:CreateTemplateTypes.PERSONAL_INFO,
-      img:'assets/personal-info.png'
+      img:'assets/personal-info.png',
+      url:'/home/create/personal-info'
     },
     {
       // title:'Professional Information',
       title:CreateTemplateTypes.PROFESSIONAL_INFO,
-      img:'assets/professional-details.png'
+      img:'assets/professional-details.png',
+      url:'/home/create/professional-info'
     },
     {
       // title:'Technical Skills',
       title:CreateTemplateTypes.TECHNICAL_SKILLS,
-      img:'assets/Technical-skilss.png'
+      img:'assets/Technical-skilss.png',
+      url:''
     },
     {
       // title:'Project Information',
       title:CreateTemplateTypes.PROJECT_INFO,
-      img:'assets/project-info.png'
+      img:'assets/project-info.png',
+      url:''
     },
     {
       // title:'Project Details',
       title:CreateTemplateTypes.PROJECT_DETAILS,
-      img:'assets/project-details.png'
+      img:'assets/project-details.png',
+      url:''
     }
   ]
 

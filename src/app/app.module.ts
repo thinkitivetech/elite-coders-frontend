@@ -51,6 +51,8 @@ import{MatToolbarModule} from '@angular/material/toolbar'
 import {MatBottomSheetModule } from '@angular/material/bottom-sheet'
 import { MatDividerModule } from "@angular/material/divider";
 import { UserModule } from './modules/user/user.module';
+import { UserFormComponent } from './modules/home/pages/user-form/user-form.component';
+import { ProfessionalSummaryFormComponent } from './modules/home/pages/professional-summary-form/professional-summary-form.component';
 
 const MaterialComponents = [
   MatAutocompleteModule,MatToolbarModule,
@@ -89,6 +91,8 @@ const MaterialComponents = [
 @NgModule({
   declarations: [
     AppComponent,
+    UserFormComponent,
+    ProfessionalSummaryFormComponent
   ],
   imports: [
     CommonModule,

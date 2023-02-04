@@ -1,0 +1,50 @@
+<mat-toolbar>
+    <span>{{form.controls['yearsOfExperience'].value?"Modify User":"New User"}}</span>
+    <span class="fill-remaining-space"></span>
+    <button class="btn-dialog-close"
+      mat-stroked-button
+      (click)="onClose()"
+      tabIndex="-1">
+      <mat-icon>clear</mat-icon>
+    </button>
+  </mat-toolbar>
+  <form [formGroup]="form"
+    class="normal-form"
+    (submit)="onSubmit()">
+        <div class="controles-container">
+          
+          <div class="sub-container">
+            <mat-form-field appearance="fill">
+                <mat-label>Profile type</mat-label>
+                <mat-select formControlName="profileType"  name="Profile type">
+                  <mat-option *ngFor="let profileType of profileTypes" [value]="profileType">
+                    {{profileType}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Years of Experience" formControlName="yearsOfExperience" name="yearsOfExperience">
+                <mat-error>
+                  Years of Experience is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width" name="summary">
+                <mat-label>Summary</mat-label>
+                <textarea matInput placeholder="Please enter your professional summary here..." formControlName="summary"></textarea>
+                <mat-error>
+                  Summary is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+          </div>   
+        </div>
+     
+    <div class="button-row">
+      <button mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="form.invalid" (click)="onSubmit()">Create</button>
+      <button mat-raised-button
+        color="warn"
+        (click)="onClear()">Clear</button>
+    </div>
+  </form>

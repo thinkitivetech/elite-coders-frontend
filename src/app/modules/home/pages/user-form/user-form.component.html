@@ -1,0 +1,96 @@
+<mat-toolbar>
+    <span>Personal Information</span>
+    <span class="fill-remaining-space"></span>
+    <button class="btn-dialog-close"
+      mat-stroked-button
+      (click)="onClose()"
+      tabIndex="-1">
+      <mat-icon>clear</mat-icon>
+    </button>
+  </mat-toolbar>
+  
+  <form [formGroup]="form"
+    class="normal-form"
+    (submit)="onSubmit()">
+    <span>Personal Information</span>
+
+    <mat-grid-list cols="2"
+    rowHeight="500px">
+    <mat-grid-tile>
+        <div class="controles-container">
+          <input type="hidden"
+            formControlName="id">
+          <div class="sub-container">
+            <mat-form-field appearance="outline">
+                <input matInput placeholder="First Name" formControlName="firstName">
+                <mat-error *ngIf="form.get('firstName').hasError('required')">
+                  First Name is <strong>required</strong>
+                </mat-error>
+                <mat-error *ngIf="form.get('firstName').hasError('maxlength')">
+                  First Name should be maximum {{form.get('firstName').errors?.['maxlength'].requiredLength}} characters long.
+                </mat-error>
+              </mat-form-field>
+            <mat-form-field appearance="outline">
+              <input formControlName="email"
+                matInput
+                placeholder="Email">
+              <mat-error>Invalid email address.</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <input matInput formControlName="dateOfBirth" [matDatepicker]="picker" placeholder="Choose a date" (dateInput)="addEvent($event)">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                <mat-error>
+                    Date cannot be in the future.
+                  </mat-error>
+              </mat-form-field>
+          </div>
+        </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+        <div class="controles-container">
+            <div class="sub-container">
+              
+              <mat-form-field appearance="outline">
+                <input formControlName="lastName"
+                  matInput
+                  placeholder="Last Name*">
+                  <mat-error *ngIf="form.get('lastName').hasError('required')">
+                      Last Name is <strong>required</strong>
+                    </mat-error>
+                    <mat-error *ngIf="form.get('lastName').hasError('maxlength')">
+                      Last Name should be maximum {{form.get('lastName').errors?.['maxlength'].requiredLength}} characters long.
+                    </mat-error>
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Mobile Number</mat-label>
+                <span matPrefix>+91 &nbsp;</span>
+                <input formControlName="mobileNumber"
+                  matInput
+                  placeholder="987-654-3210">
+                <mat-error *ngIf="form.controls['mobileNumber'].hasError('required')">This field is mandatory.</mat-error>
+                <mat-error *ngIf="form.controls['mobileNumber'].hasError('minlength')">Minimum 8 charactors needed.
+                </mat-error>
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Gender</mat-label>
+                <mat-select formControlName="gender">
+                  <mat-option *ngFor="let gender of ['Male', 'Female', 'Other']" [value]="gender">
+                    {{ gender }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+          </div>   
+        </div>
+    </mat-grid-tile>
+    </mat-grid-list>
+    <div class="button-row">
+      <button mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="form.invalid" (click)="onSubmit()">Create</button>
+      <button mat-raised-button
+        color="warn"
+        (click)="onClear()">Clear</button>
+    </div>
+  </form>
