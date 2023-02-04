@@ -1,0 +1,17 @@
+<div class="main container-fluid">
+    <div class="header">
+        <div class="title">Select one from below options</div>
+        <mat-icon (click)="onClose()">close</mat-icon>
+    </div>
+    
+    <div class="selections">
+        <div class="select-item" *ngFor="let item of generateTypes" (click)="onSelect(item.title)">
+            <div class="card">
+                <img src="{{item?.img}}" alt="image.png">
+            </div>
+            <div class="title">
+                {{item?.title}}
+            </div>
+        </div>
+    </div>
+</div>

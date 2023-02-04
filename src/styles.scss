@@ -1,11 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Lato&family=Nunito:wght@800&display=swap');
 
 html, body { height: 100%; font-size: 10px;}
-body { margin: 0; font-family: Lato,Roboto, "Helvetica Neue", sans-serif !important; }
-
+body { margin: 0; font-family: Lato,Roboto, "Helvetica Neue", sans-serif }
 @media screen and (max-width: 768px) {
         html{
             font-size: 5px;
         }
 }
+
