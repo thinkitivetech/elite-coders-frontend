@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,8 +12,11 @@ export class LoginComponent {
 
   loginForm:UntypedFormGroup;
   loadForm:boolean = false;
-
-  constructor(public snackbar:MatSnackBar) { }
+  admin:{user:string,pass:string} = {
+    user:'admin@thinkitive.com',
+    pass:'Pass@123'
+  }
+  constructor(public snackbar:MatSnackBar,private router:Router) { }
 
   ngOnInit(): void {
     this.formInit()
@@ -30,12 +34,18 @@ export class LoginComponent {
   }
 
   onSubmit(){
-    for(let key in this.loginForm.value){
-      this.loginForm.value[key] = this.loginForm.value[key].slice(11)
+    console.log("Value ==>",this.loginForm.value);
+    if(this.loginForm.value){
+      this.loginForm.reset();
+      this.openSnackbar("Logged In Sucessfully");
+      this.router.navigate(['/home']);
+      
     }
-    console.log("form Values =>",this.loginForm.value)
-    this.openSnackbar("Your Response Submitted Sucessfully")
-    this.loginForm.reset()
+    else{
+      this.openSnackbar("Please check your login credentials");
+    }
+        
+    
   }
 
   openSnackbar(msg:any){

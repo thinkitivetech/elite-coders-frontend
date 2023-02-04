@@ -6,6 +6,9 @@ const routes: Routes = [
   {
     path:'',
     loadChildren:()=> import('./modules/user/user.module').then(mod=>mod.UserModule)
+  },{
+    path:'home',
+    loadChildren:()=> import('./modules/home/home.module').then(mod=>mod.HomeModule)
   },
   {
     path:'404',
