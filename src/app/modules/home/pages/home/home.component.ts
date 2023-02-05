@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { GenerateTypesComponent } from '../../components/generate-types/generate-types.component';
+import { UserService } from 'src/app/modules/home/services/user.service';
 
 @Component({
   selector: 'app-home',
@@ -9,9 +10,8 @@ import { GenerateTypesComponent } from '../../components/generate-types/generate
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-
-  constructor(private dialog:MatDialog,private router:Router){
-
+  user:any;
+  constructor(private dialog:MatDialog,private router:Router, private userService:UserService){
   }
 
   createTemplate(){
@@ -21,10 +21,13 @@ export class HomeComponent {
           console.log("Project Type :")
         }
     })
-    // this.router.navigate(['home/create'])
   }
 
   generateCv(){
     this.router.navigate(['home/gen-cv'])
+  }
+
+  logout(){
+    this.userService.logOut();
   }
 }

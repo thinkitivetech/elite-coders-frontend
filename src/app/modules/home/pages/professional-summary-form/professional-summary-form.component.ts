@@ -41,7 +41,9 @@ onSubmit() {
   
   if (this.form.valid) {
     if (!this.form.get('id')?.value)
-      this.professionalSummaryService.insertProfessionalSummary(this.form.value);
+      this.professionalSummaryService.createProfessinoalSumery(this.form.value).subscribe(res=>{
+        console.log("Created Professioanl Summary ==>",res)
+      });
     else
       this.professionalSummaryService.updateProfessionalSummary(this.form.value);
       this.onClose(this.form.value);

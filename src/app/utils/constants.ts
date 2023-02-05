@@ -1,0 +1,1 @@
+export const ApiBaseUrl = 'http://52.6.194.120:8000'

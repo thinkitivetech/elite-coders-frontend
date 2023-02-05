@@ -56,7 +56,9 @@ export class UserFormComponent {
     console.log("Object: ",this.form.value);
     if (this.form.valid) {
       if (!this.form.get('id')?.value)
-        this.service.insertEmployee(this.form.value);
+        this.service.createUser(this.form.value).subscribe(res=>{
+          console.log("User Created ==>",res)
+        });
       else
       this.service.updateUser(this.form.value);
       this.onClose(this.form.value);

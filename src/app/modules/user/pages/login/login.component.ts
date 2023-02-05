@@ -39,10 +39,11 @@ export class LoginComponent {
     if(this.loginForm.value){
       this.userService.login(UserTypes.ADMIN,this.loginForm.value).subscribe(res=>{
         console.log("Login Response ==>",res)
+        this.loginForm.reset();
+        this.openSnackbar("Logged In Sucessfully");
+        this.router.navigate(['/home']);
       })
-      this.loginForm.reset();
-      this.openSnackbar("Logged In Sucessfully");
-      this.router.navigate(['/home']);
+      
     }
     else{
       this.openSnackbar("Please check your login credentials");

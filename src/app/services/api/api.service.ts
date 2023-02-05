@@ -72,8 +72,8 @@ export class ApiService {
       return this.http.post(url, formData);
 
   }
-
-  openSnackbar(massage:any, action:any) {
+  openSnackbar(massage:any, action?:any) {
     this.snackbar.open(massage, action, { duration: 2000 });
   }
+
 }
