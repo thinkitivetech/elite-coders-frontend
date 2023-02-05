@@ -6,6 +6,7 @@ import { ProfessionalSummaryFormComponent } from './pages/professional-summary-f
 import { TechnicalSkillsFormComponent } from './pages/technical-skills-form/technical-skills-form.component';
 import { UserFormComponent } from './pages/user-form/user-form.component';
 import { ProjectSummaryFormComponent } from './pages/project-summary-form/project-summary-form.component';
+import { GenerateCvComponent } from './pages/generate-cv/generate-cv.component';
 const routes: Routes = [
   {
     path:'',
@@ -41,9 +42,11 @@ const routes: Routes = [
             component:ProjectSummaryFormComponent
           }
         ]
+      },
+      {
+        path:'gen-cv',
+        component:GenerateCvComponent
       }
-      
-  
 ];
 
 @NgModule({

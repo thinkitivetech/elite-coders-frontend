@@ -12,6 +12,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { TechnicalSkillsFormComponent } from './pages/technical-skills-form/technical-skills-form.component';
 import { ProjectSummaryFormComponent } from './pages/project-summary-form/project-summary-form.component';
 import { CommonImportsModule } from 'src/app/common-imports.module';
+import { GenerateCvComponent } from './pages/generate-cv/generate-cv.component';
 
 
 
@@ -22,6 +23,7 @@ import { CommonImportsModule } from 'src/app/common-imports.module';
         CreateTemplateComponent,
         TechnicalSkillsFormComponent,
         ProjectSummaryFormComponent,
+        GenerateCvComponent,
     ],
     imports: [
         CommonModule,   

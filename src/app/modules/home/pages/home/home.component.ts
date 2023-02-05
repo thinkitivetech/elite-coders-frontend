@@ -23,4 +23,8 @@ export class HomeComponent {
     })
     // this.router.navigate(['home/create'])
   }
+
+  generateCv(){
+    this.router.navigate(['home/gen-cv'])
+  }
 }
