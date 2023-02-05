@@ -65,13 +65,11 @@ export class GenerateTypesComponent {
       else if(value===CreateTemplateTypes.PROJECT_DETAILS){
         component = ProjectSummaryFormComponent
       }
+      this.dialogRef.close();
       const dialogRef = this.dialog.open(component);
       dialogRef.afterClosed().subscribe(res=>{
-        if(res){
           this.dialog.open(GenerateTypesComponent);
-          this.dialogRef.close({isConfirmed:true,selected:value});
-        }
-        
+          if(res)this.dialogRef.close({isConfirmed:true,selected:value});
       })
       
     }
